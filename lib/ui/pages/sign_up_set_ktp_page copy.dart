@@ -90,7 +90,12 @@ class SignUpSetKtpPage extends StatelessWidget {
                 ),
                 CustomFilledButton(
                   title: 'Continue',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/sign-up-succes',
+                    );
+                  },
                 ),
               ],
             ),
@@ -102,10 +107,10 @@ class SignUpSetKtpPage extends StatelessWidget {
           CustomTextButton(
             title: 'Skip for Now',
             onPressed: () {
-              // Navigator.pushNamed(
-              //   context,
-              //   '/home',
-              // );
+              Navigator.pushNamed(
+                context,
+                '/sign-up-succes',
+              );
             },
           ),
         ],
