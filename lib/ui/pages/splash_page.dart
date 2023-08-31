@@ -17,9 +17,10 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
 
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushNamed(
+      Navigator.pushNamedAndRemoveUntil(
         context,
         '/onboarding',
+        (route) => false,
       );
     });
   }
@@ -33,8 +34,10 @@ class _SplashPageState extends State<SplashPage> {
           width: 155,
           height: 50,
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/img_logo_dark.png'))),
+            image: DecorationImage(
+              image: AssetImage('assets/img_logo_dark.png'),
+            ),
+          ),
         ),
       ),
     );
