@@ -3,8 +3,8 @@ import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SignUpSetProfilePage extends StatelessWidget {
+  const SignUpSetProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,54 +47,61 @@ class SignUpPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: lightBackgroundColor,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset(
+                //       'assets/ic_upload.png',
+                //       width: 32,
+                //     ),
+                //   ),
+                // ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        'assets/img_profile.png',
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  'Shayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
                 // !NOTE: FULLNAME INPUT
                 const CustomFormField(
-                  title: 'Full Name',
+                  title: 'Set PIN (6 digit number)',
                 ),
-                SizedBox(
-                  height: 16,
-                ),
-                // !NOTE: EMAIL INPUT
-                const CustomFormField(
-                  title: 'Email Address',
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                // !NOTE: PASSWORD INPUT
-                const CustomFormField(
-                  title: 'Password',
-                  obscureText: true,
-                ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
                   title: 'Continue',
-                  onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/sign-up-set-profile',
-                    );
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 40,
-            // height: 50,
-          ),
-          CustomTextButton(
-            title: 'Sign In',
-            onPressed: () {
-              Navigator.pushNamed(
-                context,
-                '/sign-in',
-              );
-            },
           ),
         ],
       ),
