@@ -104,30 +104,24 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           children: [
                             CustomFilledButton(
                               title: 'Get Started',
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  '/sign-up',
+                                );
+                              },
                             ),
                             SizedBox(
                               height: 20,
                             ),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 24,
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    '/sign-in',
-                                  );
-                                },
-                                style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero),
-                                child: Text(
-                                  'Sign In',
-                                  style: greyTextStyle.copyWith(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
+                            CustomTextButton(
+                              title: 'Sign In',
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  '/sign-in',
+                                );
+                              },
                             ),
                           ],
                         )
